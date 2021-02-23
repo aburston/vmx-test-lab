@@ -1,14 +1,22 @@
 [all:children]
 routers
-contrail
 build
 
 [routers]
-wan-pe1
-wan-pe2
-
-[contrail]
-healthbot
+ce-1
+ce-2
+ce-3
+ce-4
+nyc-1
+nyc-2
+bos-1
+bos-2
+lax-1
+lax-2
+p-1
+p-2
+p-3
+p-4
 
 [build]
 nita
