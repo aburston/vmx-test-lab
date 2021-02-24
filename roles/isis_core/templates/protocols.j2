@@ -16,13 +16,13 @@ protocols {
 
     ldp {
 {% for intf in core_interfaces %}
-        interface {{ inf.int }}.0;
+        interface {{ intf.int }}.0;
 {% endfor %}
     } 
 
     mpls {
 {% for intf in core_interfaces %}
-        interface {{ inf.int }}.0;
+        interface {{ intf.int }}.0;
 {% endfor %}
     } 
 
