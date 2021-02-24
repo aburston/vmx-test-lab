@@ -33,5 +33,5 @@ ${path}=	${CURDIR}
 T9.{{ inventory_hostname | replace("-","_") }}: BGP NEIGHBORS {{ inventory_hostname }} 
     [Documentation]	Objective: Check BGP is working on {{ inventory_hostname }}
     [Tags]	BGP
-    Check BGP Neighbors	{{ inventory_hostname | replace("-","_") }}	{{ underlay_ebgp[0].neighbors|length }}
+    Check BGP Neighbors	{{ inventory_hostname | replace("-","_") }}	{{ vpn_ibgp[0].neighbors|length }}
 
