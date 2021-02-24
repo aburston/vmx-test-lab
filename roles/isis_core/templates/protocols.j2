@@ -14,6 +14,18 @@
 ## ********************************************************
 protocols {
 
+    ldp {
+{% for intf in core_interfaces %}
+        interface {{ inf.int }}.0;
+{% endfor %}
+    } 
+
+    mpls {
+{% for intf in core_interfaces %}
+        interface {{ inf.int }}.0;
+{% endfor %}
+    } 
+
     isis {
 
 {% for intf in core_interfaces %}
