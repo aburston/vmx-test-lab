@@ -14,11 +14,11 @@ management_interface:
   int: fxp0
   ip: 100.123.1.3
   mask: 16
-underlay_ebgp:
-- autonomous_system: 65403
-  group: IPCLOS_eBGP
+vpn_ibgp:
+- group: VPN_iBGP
   neighbors:
-  - asn: 65406
-    name: 10.2.2.2
-  - asn: 65408
-    name: 10.2.2.6
+  - name: 10.52.100.3
+  - name: 10.52.100.5
+  - name: 10.52.100.6
+  - name: 10.52.100.11
+  - name: 10.52.100.12

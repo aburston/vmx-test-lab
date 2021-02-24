@@ -30,19 +30,3 @@ management_interface:
   int: fxp0
   ip: 100.123.1.7
   mask: 16
-underlay_ebgp:
-- autonomous_system: 65407
-  group: IPCLOS_eBGP
-  neighbors:
-  - asn: 65402
-    name: 10.2.1.5
-  - asn: 65404
-    name: 10.2.3.5
-  - asn: 65405
-    name: 10.2.4.5
-  - asn: 65408
-    name: 10.3.2.2
-  - asn: 65409
-    name: 10.3.2.6
-  - asn: 65410
-    name: 10.3.2.10

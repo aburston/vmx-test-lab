@@ -18,8 +18,8 @@ protocols {
         group {{ bgp.group }} {
             type internal;
             local-address {{ loopback_ip }};
-            family l3vpn {
-                signaling;
+            family inet-vpn {
+                unicast;
             }
             cluster {{ loopback_ip }};
             local-as {{ autonomous_system }};

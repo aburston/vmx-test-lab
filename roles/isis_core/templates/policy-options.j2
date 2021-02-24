@@ -13,27 +13,6 @@
 ##
 ## ********************************************************
 policy-options {
-    policy-statement IPCLOS_BGP_EXP {
-        term loopback {
-            from protocol [ direct bgp ];
-            then {
-                community add "{{ inventory_hostname }}";
-                accept;
-            }
-        }
-        term default {
-            then reject;
-        }
-    }
-    policy-statement IPCLOS_BGP_IMP {
-        term loopback {
-            from protocol [ bgp direct ];
-            then accept;
-        }
-        term default {
-            then reject;
-        }
-    }
     policy-statement PFE-LB {
         then {
             load-balance per-packet;
