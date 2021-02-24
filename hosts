@@ -2,17 +2,26 @@
 routers
 build
 
-[routers]
+[routers:children]
+ces
+pe_routers
+p_routers
+
+[ces]
 ce-1
 ce-2
 ce-3
 ce-4
+
+[pe_routers]
 nyc-1
 nyc-2
 bos-1
 bos-2
 lax-1
 lax-2
+
+[p_routers]
 p-1
 p-2
 p-3
