@@ -1,7 +1,7 @@
 ---
 OS_dir: /var/tmp/
 OS_package:
-OS_version: 20.1R1.11
+OS_version: 20.2R1.10
 autonomous_system: 65200
 build_dir: /var/tmp/build
 final_push: 'False'
@@ -20,11 +20,6 @@ login_message: '****************************************************************
   monetary damages in civil actions in the event\nof unauthorized access.\n***********************************************************************\n'
 loopback_subnet: 10.52.100.0/24
 nameserver: 100.123.0.1
-netbox_pass: Juniper!1
-netbox_site_name: WAN
-netbox_token: 8a099878e119b9e230b20cba3a091a5e9144bd40
-netbox_url: https://100.123.35.1
-netbox_user: netbox
 netconf_passwd: Juniper!1
 netconf_port: 22
 netconf_user: jcluser

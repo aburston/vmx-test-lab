@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# ACB: generated robot tests
+
+test/tests/*.robot
+
+# ACB: NITA temporary data file
+data.json

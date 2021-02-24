@@ -1,0 +1,24 @@
+---
+core_interfaces:
+- desc: '*** to p-1 ***'
+  int: ge-0/0/3
+  ip: 10.2.2.1
+  mask: 30
+- desc: '*** to p-3 ***'
+  int: ge-0/0/4
+  ip: 10.2.2.5
+  mask: 30
+iso_address: 47.0005.80ff.f800.0000.0108.0001.0100.5210.0004.00
+loopback_ip: 10.52.100.4
+management_interface:
+  int: fxp0
+  ip: 100.123.1.3
+  mask: 16
+underlay_ebgp:
+- autonomous_system: 65403
+  group: IPCLOS_eBGP
+  neighbors:
+  - asn: 65406
+    name: 10.2.2.2
+  - asn: 65408
+    name: 10.2.2.6

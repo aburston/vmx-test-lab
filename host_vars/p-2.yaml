@@ -1,0 +1,48 @@
+---
+core_interfaces:
+- desc: '*** to nyc-1 ***'
+  int: ge-0/0/1
+  ip: 10.2.1.6
+  mask: 30
+- desc: '*** to bos-1 ***'
+  int: ge-0/0/2
+  ip: 10.2.3.6
+  mask: 30
+- desc: '*** to bos-2 ***'
+  int: ge-0/0/3
+  ip: 10.2.4.6
+  mask: 30
+- desc: '*** to p-3 ***'
+  int: ge-0/0/4
+  ip: 10.3.2.1
+  mask: 30
+- desc: '*** to p-4 ***'
+  int: ge-0/0/5
+  ip: 10.3.2.5
+  mask: 30
+- desc: '*** to lax-1 ***'
+  int: ge-0/0/6
+  ip: 10.3.2.9
+  mask: 30
+iso_address: 47.0005.80ff.f800.0000.0108.0001.0100.5210.0008.00
+loopback_ip: 10.52.100.8
+management_interface:
+  int: fxp0
+  ip: 100.123.1.7
+  mask: 16
+underlay_ebgp:
+- autonomous_system: 65407
+  group: IPCLOS_eBGP
+  neighbors:
+  - asn: 65402
+    name: 10.2.1.5
+  - asn: 65404
+    name: 10.2.3.5
+  - asn: 65405
+    name: 10.2.4.5
+  - asn: 65408
+    name: 10.3.2.2
+  - asn: 65409
+    name: 10.3.2.6
+  - asn: 65410
+    name: 10.3.2.10
