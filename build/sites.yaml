@@ -26,6 +26,11 @@
   roles:
     - { role: isis_core }
 
+- hosts: pe_routers
+  connection: local
+  roles:
+    - { role: ibgp }
+
 - hosts: routers
   connection: local
   gather_facts: no

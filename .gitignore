@@ -4,3 +4,5 @@ test/tests/*.robot
 
 # ACB: NITA temporary data file
 data.json
+
+~*

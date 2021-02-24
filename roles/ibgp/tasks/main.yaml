@@ -1,0 +1,4 @@
+---
+- name: Creating ibgp configuration
+  template: src="protocols_ibgp.j2" dest="{{ tmp_dir }}/protocols_ibgp.cfg"
+
