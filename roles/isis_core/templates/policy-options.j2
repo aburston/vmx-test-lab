@@ -39,7 +39,4 @@ policy-options {
             load-balance per-packet;
         }
     }
-{% for bgp in underlay_ebgp %}
-    community "{{ inventory_hostname }}" members "{{ bgp.autonomous_system }}:1";
-{% endfor %}
 }

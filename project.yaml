@@ -1,5 +1,5 @@
 description: MPLS lab that can be used to test various management software
-name: vmx_test_lab_0.1
+name: vmx_test_lab_0.1.1
 
 action:
   - name: Build
