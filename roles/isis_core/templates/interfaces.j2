@@ -33,19 +33,6 @@ interfaces {
     }
 {% endfor %}
 
-    {{ management_interface.int }} {
-        unit 0 {
-            description "*** management ***";
-            family inet {
-{% if management_interface.ip is defined %}
-                address {{ management_interface.ip }}/{{ management_interface.mask }};
-{% else %}
-                dhcp;
-{% endif %}
-            }
-        }
-    }
-
     lo0 {
         unit 0 {
             description "*** loopback ***";
