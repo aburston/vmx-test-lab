@@ -1,28 +1,19 @@
+name: vmx_test_lab_0.1
+description: MPLS lab that can be used to test various management software
 action:
 - category: BUILD
+  name: Build
+  jenkins_url: build_vmx_lab
   configuration:
-    shell_command: write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw"
-      -v "/var/nita_configs:/var/tmp/build:rw" --rm --name ansible juniper/nita-ansible:20.10-1
-      /bin/bash -c "cd ${WORKSPACE}; bash build.sh ${build_dir}"
-  jenkins_url: build_vmx_lab-foghorn_test_ibgp
-  name: Build(foghorn_test_ibgp)
+    shell_command: write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw" -v "/var/nita_configs:/var/tmp/build:rw" --rm --name ansible juniper/nita-ansible:20.10-1 /bin/bash -c "cd ${WORKSPACE}; bash build.sh ${build_dir}"
 - category: BUILD
+  name: Dump configuration
+  jenkins_url: dump_vmx_lab
   configuration:
-    shell_command: write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw"
-      -v "/var/nita_configs:/var/tmp/build:rw" --rm --name ansible juniper/nita-ansible:20.10-1
-      /bin/bash -c "cd ${WORKSPACE}; bash dump.sh ${build_dir}"
-  jenkins_url: dump_vmx_lab-foghorn_test_ibgp
-  name: Dump configuration(foghorn_test_ibgp)
+    shell_command: write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw" -v "/var/nita_configs:/var/tmp/build:rw" --rm --name ansible juniper/nita-ansible:20.10-1 /bin/bash -c "cd ${WORKSPACE}; bash dump.sh ${build_dir}"
 - category: TEST
+  name: Test
+  jenkins_url: test_vmx_lab
   configuration:
     output_path: test/outputs/
-    shell_command: write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw"
-      -v "/var/nita_configs:/var/tmp/build:rw" --rm --name ansible juniper/nita-ansible:20.10-1
-      /bin/bash -c "cd ${WORKSPACE}; bash test_setup.sh ${build_dir}" write_yaml_files.py;
-      docker run -u root -v "/var/nita_project:/project:rw" -v "/var/nita_configs:/var/tmp/build:rw"
-      --rm --name robot -e ROBOT_OPTIONS="-d ${PWD}/test/outputs" juniper/nita-robot:20.10-1
-      /bin/bash -c "cd ${WORKSPACE}; bash test.sh"
-  jenkins_url: test_vmx_lab-foghorn_test_ibgp
-  name: Test(foghorn_test_ibgp)
-description: foghorn_test_ibgp created using the NITA webapp
-name: foghorn_test_ibgp
+    shell_command: write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw" -v "/var/nita_configs:/var/tmp/build:rw" --rm --name ansible juniper/nita-ansible:20.10-1 /bin/bash -c "cd ${WORKSPACE}; bash test_setup.sh ${build_dir}" write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw" -v "/var/nita_configs:/var/tmp/build:rw" --rm --name robot -e ROBOT_OPTIONS="-d ${PWD}/test/outputs" juniper/nita-robot:20.10-1 /bin/bash -c "cd ${WORKSPACE}; bash test.sh"
