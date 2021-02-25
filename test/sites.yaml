@@ -28,10 +28,22 @@
       template:
         src: 02_box_tests.robot.j2    
         dest: "tests/02_{{ inventory_hostname }}.robot"
+
+- hosts: pe_routers:p_routers
+  connection: local
+  vars:
+      ansible_python_interpreter: /usr/bin/python3
+  tasks:
     - name: Create connectivity tests
       template:
         src: 04_connectivity.robot.j2
         dest: "tests/04_{{ inventory_hostname }}.robot"
+
+- hosts: pe_routers
+  connection: local
+  vars:
+      ansible_python_interpreter: /usr/bin/python3
+  tasks:
     - name: Create bgp tests
       template:
         src: 09_bgp_routers.robot.j2
