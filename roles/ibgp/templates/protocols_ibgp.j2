@@ -21,6 +21,9 @@ protocols {
             family inet-vpn {
                 unicast;
             }
+            family evpn {
+                signaling;
+            }
             cluster {{ loopback_ip }};
             local-as {{ autonomous_system }};
             multipath;
