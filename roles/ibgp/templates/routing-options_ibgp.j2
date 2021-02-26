@@ -1,7 +1,7 @@
 #jinja2:lstrip_blocks: True
 ## ********************************************************
 ##
-## Project: vmx-test-lab
+## Project: nita-ansible
 ##
 ## Copyright (c) Juniper Networks, Inc., 2020. All rights reserved.
 ##
@@ -12,24 +12,6 @@
 ## Third-Party Code: This code may depend on other components under separate copyright notice and license terms. Your use of the source code for those components is subject to the terms and conditions of the respective license as noted in the Third-Party source code file.
 ##
 ## ********************************************************
-protocols {
-    bgp {
-{% for bgp in vpn_ibgp %}
-        group {{ bgp.group }} {
-            type internal;
-            family inet-vpn {
-                unicast;
-            }
-            family evpn {
-                signaling;
-            }
-            cluster {{ loopback_ip }};
-            local-as {{ autonomous_system }};
-            multipath;
-{% for neighbor in bgp.neighbors %}
-            neighbor {{ neighbor.name }};
-{% endfor %}
-        }
-{% endfor %}
-    }
+routing-options {
+    autonomous-system {{ autonomous_system }};
 }

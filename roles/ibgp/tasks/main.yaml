@@ -2,3 +2,5 @@
 - name: Creating ibgp configuration
   template: src="protocols_ibgp.j2" dest="{{ tmp_dir }}/protocols_ibgp.cfg"
 
+- name: Creating ibgp related routing-options
+  template: src="routing-options_ibgp.j2" dest="{{ tmp_dir }}/routing-options_ibgp.cfg"
