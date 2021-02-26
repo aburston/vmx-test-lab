@@ -22,6 +22,10 @@ system {
         }
         netconf {
             ssh;
+            traceoptions {
+                file netconf-ops.log size 3m files 20 world-readable;
+                flag all;
+            }
         }
         rest {
             http {
