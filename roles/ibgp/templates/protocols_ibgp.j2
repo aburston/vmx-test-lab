@@ -23,7 +23,7 @@ protocols {
             family evpn {
                 signaling;
             }
-            cluster {{ loopback_ip }};
+            local-address {{ loopback_ip }};
             multipath;
 {% for neighbor in bgp.neighbors %}
             neighbor {{ neighbor.name }};
