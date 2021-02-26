@@ -24,7 +24,6 @@ protocols {
                 signaling;
             }
             cluster {{ loopback_ip }};
-            local-as {{ autonomous_system }};
             multipath;
 {% for neighbor in bgp.neighbors %}
             neighbor {{ neighbor.name }};
