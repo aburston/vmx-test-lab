@@ -2,5 +2,5 @@
 loopback_ip: 10.52.100.14
 management_interface:
   int: fxp0
-  ip: 100.123.1.13
+  ip: 100.123.28.10
   mask: 16
