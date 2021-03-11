@@ -1,7 +1,7 @@
 ---
 OS_dir: /var/tmp/
 OS_package:
-OS_version: 20.2R1.10
+OS_version: 19.4R3.11
 autonomous_system: 65200
 build_dir: /var/tmp/build
 final_push: 'False'
