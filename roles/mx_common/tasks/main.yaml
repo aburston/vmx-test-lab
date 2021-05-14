@@ -1,4 +1,7 @@
 ---
+- name: Creating chassis config
+  template: src=mx_chassis.j2 dest={{ tmp_dir }}/mx_chassis.cfg
+
 - name: Creating common MX base config
   template: src=mx_system.j2 dest={{ tmp_dir }}/mx_system.cfg
 
