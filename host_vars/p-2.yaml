@@ -28,5 +28,5 @@ iso_address: 47.0005.80ff.f800.0000.0108.0001.0100.5210.0008.00
 loopback_ip: 10.52.100.8
 management_interface:
   int: fxp0
-  ip: 100.123.1.1
+  ip: 100.123.28.14
   mask: 16
