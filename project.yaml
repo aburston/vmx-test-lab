@@ -1,4 +1,4 @@
-name: vmx_test_lab_0.2
+name: vmx_test_lab_0.3
 description: MPLS lab that can be used to test various management software
 action:
 - category: BUILD
@@ -6,6 +6,11 @@ action:
   jenkins_url: build_vmx_lab
   configuration:
     shell_command: write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw" -v "/var/nita_configs:/var/tmp/build:rw" --rm --name ansible juniper/nita-ansible:20.10-1 /bin/bash -c "cd ${WORKSPACE}; bash build.sh ${build_dir}"
+- category: BUILD
+  name: Build
+  jenkins_url: base_build_vmx_lab
+  configuration:
+    shell_command: write_yaml_files.py; docker run -u root -v "/var/nita_project:/project:rw" -v "/var/nita_configs:/var/tmp/build:rw" --rm --name ansible juniper/nita-ansible:20.10-1 /bin/bash -c "cd ${WORKSPACE}; bash base_build.sh ${build_dir}"
 - category: BUILD
   name: Dump configuration
   jenkins_url: dump_vmx_lab
